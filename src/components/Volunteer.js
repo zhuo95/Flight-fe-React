@@ -28,6 +28,7 @@ class Volunteer extends React.Component {
     }
 
     getRequests = (pageIndex) => {
+        pageIndex = typeof pageIndex === "undefined" ? this.state.currentPage : pageIndex;
         axios.get(`/flight/?pageIndex=${pageIndex}`
         )
         .then(res => {
@@ -57,6 +58,12 @@ class Volunteer extends React.Component {
             })
         } else {
             this.getRequests(0);
+        }
+    }
+
+    handleKeyPress = event => {
+        if(event.key === "Enter") {
+            this.searchRequests();
         }
     }
 
@@ -112,6 +119,7 @@ class Volunteer extends React.Component {
                                     name="location"
                                     ref={this.locationRef}
                                     type="text"
+                                    onKeyPress={this.handleKeyPress}
                                 />
                             </div>
                             <div className="col-xs-4 search-btn-con">
