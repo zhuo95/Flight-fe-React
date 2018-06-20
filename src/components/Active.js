@@ -9,13 +9,17 @@ class Active extends React.Component {
     }
 
     componentWillMount() {
-        const { params } = this.props.match;
-        const id = params.id;
-        const token = params.token;
+        const search = this.props.location.search;
+        const params = new URLSearchParams(search);
+        const id = params.get('id');
+        const token = params.get('token');
+        console.log(id);
+        console.log(token);
         axios.patch(`/email/${id}/${token}`
         )
         .then(res => {
             console.log(res.data);
+            alert(res.data.msg);
         })
     }
 
@@ -39,6 +43,11 @@ class Active extends React.Component {
                 <p>Active your email successfully! Back to system {this.state.count} seconds later...</p>
                 <br/>
                 <button className="btn btn-primary" onClick={this.handleClick}>Go To Flight</button>
+                <div>
+                    <p id="active-copyright" className="copyright">
+                        2018©FoggyStudio
+                    </p>
+                </div>
             </div>
         );
     }
