@@ -37,7 +37,7 @@ class Intro extends React.Component {
                    transitionLeave={ false }
                >
 
-                   <div className="container">
+                   <div className="container intro-container">
                        <div className="jumbotron">
                            <h1>Welcome</h1>
                            <p className="welcome">This is a platform providing pick-up request information for the new students who are seeking for pick-up service at airport, and those people who want to give a help. </p>
@@ -70,7 +70,7 @@ class Intro extends React.Component {
                    </div>
 
                    <p className="copyright">
-                       2018@FoggyStudio
+                       2018©FoggyStudio
                    </p>
 
 
