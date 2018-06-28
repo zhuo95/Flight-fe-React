@@ -104,10 +104,25 @@ select {
   padding-left: 0;
   padding-right: 0;
 }
-.jumbotron {
-  background: url("/images/bg.jpg");
-  background-size: cover;
-  color: #3e588f;
+.carousel-container {
+  margin-bottom: 30px;
+}
+.carousel-img {
+  width: 100%;
+  height: 400px;
+}
+.legend {
+  background: none !important;
+  opacity: 1 !important;
+  text-align: left !important;
+  color: #3e588f !important;
+}
+.intro-button {
+  background-color: #3e588f !important;
+  margin-top: 5px;
+}
+.intro-button:hover {
+  opacity: 0.9;
 }
 .entry {
   max-width: 500px;
@@ -302,7 +317,7 @@ a:hover {
 #register-dropzone:hover {
   cursor: pointer;
 }
-.welcome {
+.intro-content {
   font-family: "Sans-serif";
   font-style: oblique;
 }
@@ -311,6 +326,7 @@ a:hover {
   text-align: center;
   color: #666;
   line-height: 30px;
+  cursor: pointer;
 }
 .no-requests {
   text-align: center;
@@ -337,4 +353,11 @@ a:hover {
 #avatar-display {
   width: 100%;
   height: 100%;
+}
+.alert {
+  position: absolute;
+  top: 100;
+  left: 0;
+  right: 0;
+  text-align: center;
 }
